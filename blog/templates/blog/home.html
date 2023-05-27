@@ -1,32 +1,30 @@
-{% comment %} {% extends 'blog/base.html' %}
+{% extends 'blog/base.html' %}
 
   {% block content %}
     <h1>Blog Home</h1>
     <hr>
-    {% for post in posts %}
+    {% for posts in posts %}
       <h3>{{posts.tittle}}</h3>
-      <p>By:{{ post.author }} on {{ posts.date_posted }}</p>
+      <p>By: {{ posts.author }} on {{ posts.date_posted }}</p>
       <p>{{ posts.content}}</p> <br>
+
     {% endfor %}
-  {% endblock content %} {% endcomment %}
+  {% endblock content %} 
 
 
-  {% comment %} {% extends 'blog/base.html' %} {% endcomment %}
-  {% block content %}
-  
-      {% for posts in posts %}
-          <article class="media content-section">
-              <img class="rounded-cirlce article-img" src="{{ posts.author.profile.image.url }}" alt="">
-              <div class="media-body">
-                <div class="article-metadata">
-                  <a class="mr-2" href="#">{{ posts.author }}</a>
-                  <small class="text-muted">{{ posts.date_posted }}</small>
-                </div>
-                {% comment %} <h2><a class="article-title" href="{% url 'blog-detail' posts.id %}">{{ posts.title }}</a></h2> {% endcomment %}
-                <p class="article-content">{{ posts.content }}</p>
-              </div>
-              <br>
-            </article>
-      {% endfor  %}
-  {% endblock content %}
+
+  <article class="media content-section">
+    <!-- <img class="rounded-cirlce article-img" src="{{ posts.author.profile.image.url }}" alt=""> -->
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#">{{ posts.author }}</a>
+        <small class="text-muted">{{ posts.date_posted }}</small>
+      </div>
+      <h2><a class="article-title" href="{% url 'blog-detail' posts.id %}">{{ posts.title }}</a></h2>
+      <p class="article-content">{{ posts.content }}</p>
+    </div>
+    <br>
+</article>
+
+
   

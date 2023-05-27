@@ -10,7 +10,7 @@ from .models import Article, NewsletterSubscription, Category, User
 posts = [
     {
         'author': 'Ameh Sunday S.',
-        'tittle': 'Blog Post',
+        'tittle': 'Blog Post 1',
         'content': 'This is my first blog post',
         'date_posted': '25th June, 2023',
     },
